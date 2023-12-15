@@ -1,13 +1,21 @@
-vim.g.vim_monokai_tasty_italic = 1
--- vim.g.vim_monokai_tasty_machine_tint = 1
-vim.g.vim_monokai_tasty_highlight_active_window = 1
 return {
-  { "patstockwell/vim-monokai-tasty" },
-
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+      },
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vim-monokai-tasty",
+      colorscheme = "solarized-osaka",
     },
   },
 }
