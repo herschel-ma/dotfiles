@@ -19,6 +19,9 @@ local powershell_options = {
   -- shellxquote = "",
 }
 
+-- set default sqlite.dll path to vim.fn.stdpath("data"), reqiured by sqlite.luat that Trans.nvim depend on
+vim.g.sqlite_clib_path = vim.fn.stdpath("data") .. "/sqlite3.dll"
+
 if vim.fn.has("win32") then
   for option, value in pairs(powershell_options) do
     vim.o[option] = value
