@@ -27,3 +27,7 @@ if vim.fn.has("win32") then
     vim.o[option] = value
   end
 end
+
+vim.o.list = true
+vim.o.lcs = [[tab:▸ ,trail:-,eol:↵]]
+vim.o.swf = false
