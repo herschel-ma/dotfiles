@@ -29,5 +29,16 @@ if vim.fn.has("win32") then
 end
 
 vim.o.list = true
-vim.o.lcs = [[tab:▸ ,trail:-,eol:↵]]
+vim.o.lcs = [[tab:▸ ,space:.,trail:-,eol:↵]]
 vim.o.swf = false
+
+if vim.g.neovide then
+  vim.o.guifont = "Source Code Pro iCursive S12:h12"
+  vim.g.neovide_theme = "dark"
+  vim.g.neovide_refresh_rate = 50
+  vim.g.neovide_no_idle = false
+  vim.g.neovide_confirm_quit = true
+  vim.g.neovide_fullscreen = false
+  vim.g.noevide_remember_window_size = false
+  vim.g.neovide_cursor_vfx_mode = "railgun"
+end
