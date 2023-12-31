@@ -12,10 +12,21 @@ return {
       },
     },
   },
+  -- optional 2 (high contrast, light one is nice)
+  {
+    "miikanissi/modus-themes.nvim",
+    priority = 1000,
+    opts = {
+      style = "modus_operandi",
+      variant = "deuteranopia",
+    },
+  },
+  -- optional 3 (it's pretty)
+  { "akinsho/horizon.nvim", version = "*" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "solarized-osaka",
+      colorscheme = "horizon",
     },
   },
 }
