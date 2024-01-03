@@ -19,8 +19,14 @@ However, there are certain prerequisites for its proper functioning:
 To enhance my experience, I made some additional configurations, such as:
 
 - Setting up configurations to install ToggleTerm.nvim and making it compatible with
-  pwsh or nu. I use Alacritty instead of Windows Terminal.
+  pwsh or nu. ~~I use Alacritty instead of Windows Terminal~~.
+
   > Here's the link of [alacritty.yml](https://gist.github.com/herschel-ma/332b98b4c6ff4d323e7932f6ff911970).
+
+  BTW, I use wezterm now, it's better.
+
+  > Here's the config of [wezterm](https://gist.github.com/herschel-ma/725a1e6956d62ff94097dcc561ecd57c)
+
 - Using Codeium as my AI assistant. While Copilot may be more powerful, it's not
   free.
 - Trying leetcode.nvim to solve problems in Neovim.
