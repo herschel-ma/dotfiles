@@ -42,3 +42,4 @@ if vim.g.neovide then
   vim.g.noevide_remember_window_size = false
   vim.g.neovide_cursor_vfx_mode = "railgun"
 end
+vim.o.winbar = " %{%v:lua.vim.fn.expand('%:t')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
