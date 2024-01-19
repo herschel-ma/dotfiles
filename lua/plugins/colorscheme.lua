@@ -1,7 +1,7 @@
 return {
   {
     "craftzdog/solarized-osaka.nvim",
-    lazy = true,
+    -- lazy = true,
     priority = 1000,
     opts = {
       transparent = true,
@@ -67,10 +67,12 @@ return {
       },
     },
   },
+  { "felipeagc/fleet-theme-nvim", lazy = true, priority = 1000 },
+  { "nyoom-engineering/oxocarbon.nvim", lazy = true, priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "solarized-osaka",
     },
   },
 }
