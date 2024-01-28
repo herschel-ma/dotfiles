@@ -1,5 +1,11 @@
 return {
   {
+    "gen740/SmoothCursor.nvim",
+    config = function()
+      require("smoothcursor").setup()
+    end,
+  },
+  {
     "craftzdog/solarized-osaka.nvim",
     -- lazy = true,
     priority = 1000,
