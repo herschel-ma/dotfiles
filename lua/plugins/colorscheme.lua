@@ -21,7 +21,7 @@ return {
   -- optional 2 (high contrast, light one is nice)
   {
     "miikanissi/modus-themes.nvim",
-    lazy = true,
+    -- lazy = true,
     priority = 1000,
     opts = {
       style = "modus_operandi",
@@ -73,12 +73,12 @@ return {
       },
     },
   },
-  { "felipeagc/fleet-theme-nvim", lazy = true, priority = 1000 },
-  { "nyoom-engineering/oxocarbon.nvim", lazy = true, priority = 1000 },
+  { "felipeagc/fleet-theme-nvim", priority = 1000 },
+  { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "oxocarbon",
     },
   },
 }
