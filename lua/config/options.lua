@@ -33,7 +33,7 @@ vim.o.lcs = [[tab:▸ ,space:.,trail:-,eol:↵]]
 vim.o.swf = false
 
 if vim.g.neovide then
-  vim.o.guifont = "Liga SFMono Nerd Font:h12.5"
+  vim.o.guifont = "Liga SFMono Nerd Font:h11:w0.1"
   vim.g.neovide_theme = "dark"
   vim.g.neovide_refresh_rate = 50
   vim.g.neovide_no_idle = false
