@@ -74,11 +74,17 @@ return {
     },
   },
   { "felipeagc/fleet-theme-nvim", priority = 1000 },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "tokyonight",
     },
   },
 }

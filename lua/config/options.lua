@@ -43,4 +43,4 @@ if vim.g.neovide then
 end
 vim.o.winbar = " %{%v:lua.vim.fn.expand('%:t')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
 
-vim.g.sqlite_clib_path = vim.fn.stdpath("data") .. "/sqlite3.dll"
+-- vim.g.sqlite_clib_path = vim.fn.stdpath("data") .. "/sqlite3.dll"
