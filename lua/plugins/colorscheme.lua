@@ -34,6 +34,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
+    lazy = false,
     opts = {
       transparent_background = true,
       term_colors = true,
@@ -78,13 +79,20 @@ return {
     "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
+    transparent = true,
     opts = {},
   },
   { "nyoom-engineering/oxocarbon.nvim", priority = 1000 },
   {
+    "2giosangmitom/nightfall.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "tokyonight",
+      colorscheme = "nightfall",
     },
   },
 }
