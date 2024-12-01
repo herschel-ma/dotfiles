@@ -5,4 +5,4 @@ local opts = { silent = true, noremap = true }
 vim.keymap.set("i", "jk", "<ESC>", opts)
 vim.keymap.set("i", "kj", "<ESC>", opts)
 vim.keymap.del("n", "<c-/>")
-vim.keymap.set("n", "<c-/>", ":ToggleTerm direction=horizontal<ENTER>", opts)
+-- vim.keymap.set("n", "<c-/>", ":ToggleTerm direction=horizontal<ENTER>", opts)
