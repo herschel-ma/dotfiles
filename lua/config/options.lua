@@ -42,5 +42,6 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_mode = "railgun"
 end
 vim.o.winbar = " %{%v:lua.vim.fn.expand('%:t')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
-
+-- enable screenkey statusline default
+vim.g.screenkey_statusline_component = true
 -- vim.g.sqlite_clib_path = vim.fn.stdpath("data") .. "/sqlite3.dll"

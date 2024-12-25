@@ -90,9 +90,17 @@ return {
     opts = {},
   },
   {
+    "ayu-theme/ayu-vim",
+    lazy = false,
+  },
+  {
+    "jacoborus/tender.vim",
+    lazy = false,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nightfall",
+      colorscheme = "ayu",
     },
   },
 }
