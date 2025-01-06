@@ -98,6 +98,41 @@ return {
     lazy = false,
   },
   {
+    "Iron-E/nvim-highlite",
+    config = function(_, opts)
+      -- OPTIONAL: setup the plugin. See "Configuration" for information
+      require("highlite").setup({ generator = { plugins = { vim = false }, syntax = false } })
+
+      -- or one of the alternate colorschemes (see the "Built-in Colorschemes" section)
+      -- vim.api.nvim_command("colorscheme highlite")
+    end,
+    lazy = false,
+    priority = math.huge,
+    version = "^4.0.0",
+  },
+  {
+    "m15a/nvim-srcerite",
+    dependencies = { "Iron-E/nvim-highlite" },
+    config = function()
+      vim.g.srcerite_inverse_vidual = false
+      vim.g.srcerite_inverse_search = true
+      vim.g.srcerite_inverse_match_paren = true
+      -- vim.api.nvim_command("colorscheme srcerite")
+    end,
+  },
+  {
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
+    "0xstepit/flow.nvim",
+    lazy = false,
+    priority = 1000,
+    tag = "v2.0.0",
+    opts = {},
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "ayu",
