@@ -135,7 +135,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "ayu",
+      colorscheme = "monokai-nightasty",
     },
   },
 }
