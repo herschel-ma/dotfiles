@@ -7,15 +7,14 @@ local function setup_avante()
     version = false,
     build = "make",
     opts = {
-      provider = "openai",
-      auto_suggestions_provider = "openai",
-      openai = {
-        endpoint = "https://api.deepseek.com/v1",
-        model = "deepseek-chat",
-        timeout = 30000,
-        temperature = 0.7, -- 降低温度以获得更稳定的输出
-        max_tokens = 4096, -- 减少最大 token 数以控制成本
-        ["local"] = false,
+      provider = "deepseek",
+      vendors = {
+        deepseek = {
+          __inherited_from = "openai",
+          api_key_name = "DEEPSEEK_API_KEY",
+          endpoint = "https://api.deepseek.com",
+          model = "deepseek-coder",
+        },
       },
       file_selector = {
         --- @alias FileSelectorProvider "native" | "fzf" | "telescope" | string
