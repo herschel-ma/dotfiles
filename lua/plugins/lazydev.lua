@@ -10,6 +10,7 @@ return {
     library = {
       { path = "~/projects/avante.nvim/lua", words = { "avante" } },
       { path = "~/projects/ghtrending.nvim/lua", words = { "ghtrending" } },
+      { path = "~/projects/kd_translate.nvim/lua", words = { "kd" } },
       { path = "luvit-meta/library", words = { "vim%.uv" } },
     },
   },

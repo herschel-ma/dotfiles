@@ -27,6 +27,7 @@
 --   end
 -- end
 
+vim.env.PATH = "~/venv/bin" .. vim.env.PATH
 vim.o.list = true
 vim.o.lcs = [[tab:▸ ,space:.,trail:-,eol:↵]]
 vim.o.swf = false
