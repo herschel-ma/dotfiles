@@ -30,7 +30,7 @@ return {
         },
       })
     end,
-    vim.keymap.set("n", "<leader>kd", ":TranslateNormal<CR>"),
-    vim.keymap.set("v", "<leader>kd", ":TranslateVisual<CR>"),
+    vim.keymap.set("n", "<leader>kd", ":TranslateNormal<CR>", { silent = true }),
+    vim.keymap.set("v", "<leader>kd", ":TranslateVisual<CR>", { silent = true }),
   },
 }
