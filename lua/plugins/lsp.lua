@@ -55,6 +55,18 @@ return {
                 },
               },
             },
+            rust_analyzer = {
+              settings = {
+                ["rust-analyzer"] = {
+                  procMacro = {
+                    enable = false,
+                  },
+                  checkOnSave = {
+                    command = "clippy",
+                  },
+                },
+              },
+            },
           },
         },
       },
