@@ -10,7 +10,7 @@ return {
         { "n", "v" },
         "<leader>gtr",
         "<cmd>GhtrendingRepo<cr>",
-        { silent = true, desc = "View Trednging Repos." }
+        { silent = true, desc = "View Trending Repos." }
       )
       vim.keymap.set(
         { "n", "v" },
