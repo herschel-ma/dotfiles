@@ -145,9 +145,22 @@ return {
     end,
   },
   {
+    "Yazeed1s/oh-lucy.nvim",
+    lazy = false,
+    config = function()
+      vim.g.oh_lucy_italic_comments = false
+      vim.g.oh_lucy_italic_keywords = false
+      vim.g.oh_lucy_italic_variables = false
+      vim.g.oh_lucy_evening_italic_functions = false
+      vim.g.oh_lucy_evening_italic_comments = false
+      vim.g.oh_lucy_evening_italic_keywords = false
+      vim.g.oh_lucy_evening_italic_variables = false
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "nightfall",
+      colorscheme = "oh-lucy",
     },
   },
 }
