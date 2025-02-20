@@ -7,17 +7,30 @@ local function setup_avante()
     version = false,
     build = "make",
     opts = {
-      provider = "deepseek",
+      provider = "gemini",
       vendors = {
-        deepseek = {
+        ["deepseek"] = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-coder",
+          endpoint = "https://api.deepseek.com/v1",
+          model = "deepseek-chat",
         },
       },
+      gemini = {
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+        model = "gemini-2.0-flash",
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0.3,
+        max_tokens = 4096,
+      },
+      dual_boost = {
+        enabled = false,
+        first_provider = "gemini",
+        second_provider = "deepseek",
+        prompt = "Based on the two reference outputs below, generate a response that incorporates elements from both but reflects your own judgment and unique perspective. Do not provide any explanation, just give the response directly. Reference Output 1: [{{provider1_output}}], Reference Output 2: [{{provider2_output}}]",
+        timeout = 60000, -- Timeout in milliseconds
+      },
       file_selector = {
-        --- @alias FileSelectorProvider "native" | "fzf" | "telescope" | string
         provider = "fzf",
         -- Options override for custom providers
         provider_opts = {},
