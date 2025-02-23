@@ -158,9 +158,15 @@ return {
     end,
   },
   {
+    "fenetikm/falcon",
+    config = function()
+      vim.g.falcon_lightline = 1
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "highlite-tomorrow",
+      colorscheme = "falcon",
     },
   },
 }
