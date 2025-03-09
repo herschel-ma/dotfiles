@@ -164,9 +164,14 @@ return {
     end,
   },
   {
+    "xero/miasma.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "falcon",
+      colorscheme = "catppuccin-mocha",
     },
   },
 }
