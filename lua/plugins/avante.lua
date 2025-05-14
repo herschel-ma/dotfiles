@@ -7,13 +7,15 @@ local function setup_avante()
     version = false,
     build = "make",
     opts = {
-      provider = "gemini",
+      provider = "deepseek",
       vendors = {
         ["deepseek"] = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com/v1",
+          endpoint = "https://api.deepseek.com",
           model = "deepseek-chat",
+          temperature = 0,
+          max_tokens = 8192,
         },
       },
       gemini = {
@@ -57,10 +59,17 @@ local function setup_avante()
       end,
     },
     dependencies = {
-      { "stevearc/dressing.nvim", lazy = true },
-      { "nvim-lua/plenary.nvim", lazy = true },
-      { "MunifTanjim/nui.nvim", lazy = true },
-      { "nvim-tree/nvim-web-devicons", lazy = true },
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      "echasnovski/mini.pick", -- for file_selector provider mini.pick
+      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+      "ibhagwan/fzf-lua", -- for file_selector provider fzf
+      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      "zbirenbaum/copilot.lua",
       {
         "HakonHarnes/img-clip.nvim",
         event = "VeryLazy",
