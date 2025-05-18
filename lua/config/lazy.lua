@@ -7,6 +7,10 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 require("lazy").setup({
+  git = {
+    -- 为 Git 命令添加代理参数
+    cmd = { "git", "-c", "http.proxy=socks5://127.0.0.1:20170", "-c", "https.proxy=socks5://127.0.0.1:20170" },
+  },
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
