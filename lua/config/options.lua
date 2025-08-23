@@ -35,7 +35,8 @@ vim.o.swf = false
 vim.o.wrap = true
 
 if vim.g.neovide then
-  vim.o.guifont = "DankMono Nerd Font Mono:h12:w0.1"
+  -- vim.o.guifont = "DankMono Nerd Font Mono:h12:w0.1"
+  vim.o.guifont = "Monaspace Xenon Frozen Light:h12:w0.1"
   vim.g.neovide_theme = "dark"
   vim.g.neovide_refresh_rate = 50
   vim.g.neovide_no_idle = false

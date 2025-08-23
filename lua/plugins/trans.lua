@@ -22,7 +22,7 @@ return {
   },
   {
     "SilverofLight/kd_translate.nvim",
-    dev = true,
+    dev = false,
     config = function()
       require("kd").setup({
         window = {

@@ -7,23 +7,25 @@ local function setup_avante()
     version = false,
     build = "make",
     opts = {
-      provider = "deepseek",
-      vendors = {
-        ["deepseek"] = {
-          __inherited_from = "openai",
-          api_key_name = "DEEPSEEK_API_KEY",
-          endpoint = "https://api.deepseek.com",
-          model = "deepseek-chat",
-          temperature = 0,
-          max_tokens = 8192,
+      provider = "gemini",
+      providers = {
+        vendors = {
+          ["deepseek"] = {
+            __inherited_from = "openai",
+            api_key_name = "DEEPSEEK_API_KEY",
+            endpoint = "https://api.deepseek.com",
+            model = "deepseek-chat",
+            temperature = 0,
+            max_tokens = 8192,
+          },
         },
-      },
-      gemini = {
-        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
-        model = "gemini-2.0-flash",
-        timeout = 30000, -- Timeout in milliseconds
-        temperature = 0.3,
-        max_tokens = 4096,
+        gemini = {
+          endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+          model = "gemini-2.0-flash",
+          timeout = 30000, -- Timeout in milliseconds
+          temperature = 0.3,
+          max_tokens = 4096,
+        },
       },
       dual_boost = {
         enabled = false,
@@ -129,6 +131,6 @@ local function setup_blink()
 end
 
 return {
-  setup_avante(),
-  setup_blink(),
+  -- setup_avante(),
+  -- setup_blink(),
 }
