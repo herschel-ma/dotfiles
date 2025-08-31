@@ -58,44 +58,96 @@ return {
             rust_analyzer = {
               settings = {
                 ["rust-analyzer"] = {
+                  -- 内存优化设置
                   memoryUsage = "Low",
-                  -- 核心优化：禁用不需要的检查
+
+                  -- 检查设置
                   checkOnSave = {
-                    command = "clippy", -- 用 clippy 而不是默认的 check, 更全面
-                    extraArgs = { "--no-deps" }, -- 极其重要！不检查依赖项，只检查你的代码
-                    -- 减少内存使用：限制工作区范围
-                    files = {
-                      excludeDirs = { ".git", "target", "docs" },
-                    },
-                    -- 减少内存使用：限制分析范围
-                    cargo = {
-                      buildScripts = {
-                        enable = true, -- 这个开启，对 bevy 必须
-                        -- 但可以使用 exclude 减轻负担
-                      },
-                      allFeatures = false, -- 不要总是启用所用特性
-                      noDefaultFeatures = true,
-                    },
-                    -- 最关键的优化:关闭一些极其耗内存的收集器
-                    diagnostics = {
-                      disabled = { "unlinked-file", "macro-error" }, -- 关闭未链接文件检查，对workspace 很有用
-                      enable = true,
-                    },
-                    -- 对于 Bevy: 必须正确设置特性，否则 RA 会卡死
-                    procMacro = {
-                      enable = true, -- 必须开启，因为Bevy大量使用过程宏
-                    },
-                    -- 关闭飞行检查(很少用但耗资源)
-                    enableFlyCheck = false,
-                    -- 关闭某些耗内存的镜头（Lens) 功能
-                    lens = {
-                      enable = false, -- 或者精细控制: {enable = { refrences = true, .. }}
+                    command = "clippy",
+                    extraArgs = {
+                      "--no-deps",
+                      "--",
+                      "-A",
+                      "clippy::too_many_arguments",
+                      "-A",
+                      "clippy::type_complexity",
+                      "-A",
+                      "clippy::needless_pass_by_value",
                     },
                   },
+
+                  -- 文件排除设置
+                  files = {
+                    excludeDirs = {
+                      ".git",
+                      "target",
+                      "docs",
+                      -- "assets", -- 排除资源文件夹
+                      "**/target/**", -- 递归排除所有target目录
+                    },
+                    -- watcher = "client", -- 使用客户端文件监视器
+                  },
+
+                  -- Cargo 设置
+                  cargo = {
+                    buildScripts = {
+                      enable = true,
+                      -- 排除一些不必要的构建脚本
+                      excludeGlobs = { "**/benches/**", "**/examples/**" },
+                    },
+                    -- 对于 Bevy 项目，建议启用所有特性
+                    allFeatures = true, -- 改为 true，因为 Bevy 需要
+                    noDefaultFeatures = false, -- 改为 false
+                    features = "all", -- 添加这个设置
+                    -- target = "wasm32-unknown-unknown", -- 如果做 wasm 构建
+                  },
+
+                  -- 诊断设置
+                  diagnostics = {
+                    disabled = {
+                      "unlinked-file",
+                      "macro-error",
+                      "inactive-code", -- 添加这个可以减少一些警告
+                    },
+                    enable = true,
+                    warningsAsHint = { "unused_variables" }, -- 将某些警告降级为提示
+                  },
+
+                  -- 过程宏设置
+                  procMacro = {
+                    enable = true,
+                    ignored = {
+                      -- 可以添加一些特别耗资源的过程宏
+                    },
+                  },
+
+                  -- 其他优化设置
+                  enableFlyCheck = false,
+                  lens = {
+                    enable = false,
+                    implementations = {
+                      enable = false, -- 特别关闭实现镜头，很耗资源
+                    },
+                  },
+
+                  -- 工作区设置
+                  workspace = {
+                    symbol = {
+                      search = {
+                        scope = "workspace", -- 限制符号搜索范围
+                        limit = 1000, -- 限制搜索结果数量
+                      },
+                    },
+                  },
+
+                  -- 类型提示设置
+                  -- inlayHints = {
+                  --   enable = false, -- 关闭类型提示可以减少内存使用
+                  -- },
+
+                  -- 最大内存限制
+                  max_workspace_size = 1500, -- 稍微增加一点，Bevy 项目需要更多内存
                 },
-                -- 防止LSP服务器占用过高导致系统卡死
-                -- 设置内存限制（单位是MB）
-                max_workspace_size = 300, -- 允许RA使用的最大内存
               },
             },
           },
