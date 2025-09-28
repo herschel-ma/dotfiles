@@ -27,7 +27,9 @@
 --   end
 -- end
 
-vim.env.PATH = "~/venv/bin" .. vim.env.PATH
+vim.o.shell = "/usr/bin/bash -l"
+vim.env.PATH = vim.fn.expand("~") .. "/venv/bin:" .. vim.env.PATH
+vim.env.PATH = vim.env.PATH .. ":" .. vim.fn.expand("~/.nvm/versions/node/v16.20.2/bin")
 vim.o.list = true
 vim.o.lcs = [[tab:▸ ,space:.,trail:-,eol:↵]]
 vim.o.swf = false
