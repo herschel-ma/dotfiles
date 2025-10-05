@@ -40,9 +40,8 @@ To enhance my experience, I made some additional configurations, such as:
   BTW, I'm using a plugin called `kd_translate.nvim` to translate English to Chinese,
   which tooks [kd](https://github.com/Karmenzind/kd) as backend. It's a powerful, cross-platform and super fast dictionary made by Go programming language.
   I have made some changes for that plugin.
-
   - [origin version](https://github.com/SilverofLight/kd_translate.nvim)
 
-- ~~LazyVim currently has an issue caused by recent updates to the APIs of the mason and mason-lspconfig plugins. These updates introduced new features such as automatic LSP server installation. However, LazyVim relies on their old, unofficial, internal APIs, which has led to compatibility problems. A fix has not been released yet. ~~
+- ~~LazyVim currently has an issue caused by recent updates to the APIs of the mason and mason-lspconfig plugins. These updates introduced new features such as automatic LSP server installation. However, LazyVim relies on their old, unofficial, internal APIs, which has led to compatibility problems. A fix has not been released yet.~~
 
--- Update LazyVim to 15.2.0.
+- Update LazyVim to 15.7.1.
