@@ -36,6 +36,8 @@ vim.o.swf = false
 -- enable wrap default to avoid pain
 vim.o.wrap = true
 
+vim.opt.clipboard:append("unnamedplus")
+
 if vim.g.neovide then
   -- vim.o.guifont = "DankMono Nerd Font Mono:h12:w0.1"
   vim.o.guifont = "Monaspace Xenon Frozen Light:h12:w0.1"

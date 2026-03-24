@@ -25,7 +25,7 @@ return {
     priority = 1000,
     opts = {
       style = "modus_operandi",
-      variant = "deuteranopia",
+      variants = "deuteranopia",
     },
   },
   -- optional 3 (it's pretty)
